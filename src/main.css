@@ -1,0 +1,88 @@
+body {
+    background-color: #860e0c;
+}
+
+.color-primary {
+    color: #fff
+}
+
+.color-secundary {
+    color: #faa
+}
+
+.text-centered {
+    text-align: center;
+}
+
+.row {
+    margin-top: 3rem !important;
+}
+button {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+
+.heart {
+  margin: 0 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #D46A6A;
+  position: relative;
+  display: inline-block;
+  -webkit-animation: pulse .5s infinite alternate ease-in;
+          animation: pulse .5s infinite alternate ease-in;
+}
+
+.heart:before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #D46A6A;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  content: "";
+}
+
+.heart:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #D46A6A;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+}
+
+@-webkit-keyframes pulse {
+    from {-webkit-transform: rotate(-135deg) scale(1);transform: rotate(-135deg) scale(1);}
+    to   {-webkit-transform: rotate(-135deg) scale(1.2);transform: rotate(-135deg) scale(1.2);}
+}
+
+@keyframes pulse {
+    from {-webkit-transform: rotate(-135deg) scale(1);transform: rotate(-135deg) scale(1);}
+    to   {-webkit-transform: rotate(-135deg) scale(1.2);transform: rotate(-135deg) scale(1.2);}
+}
+
+.rotate.paused{
+    animation-play-state: paused;
+}
+
+.rotate {
+    animation-name: timer;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 30s;
+}
+
+@keyframes timer {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
