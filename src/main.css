@@ -17,9 +17,8 @@ body {
 .row {
     margin-top: 3rem !important;
 }
-button {
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
+.btn-group .btn {
+    font-weight: 700;
 }
 
 .heart {
@@ -55,6 +54,21 @@ button {
   content: "";
 }
 
+.headerLogo {
+    height: 80px;
+    transition: 30s;
+}
+
+.countDown {
+    font-size: 9rem;
+    font-weight: 700;
+}
+
+.mainButton {
+    font-size: 3rem;
+    padding: 0 3rem;
+}
+
 @-webkit-keyframes pulse {
     from {-webkit-transform: rotate(-135deg) scale(1);transform: rotate(-135deg) scale(1);}
     to   {-webkit-transform: rotate(-135deg) scale(1.2);transform: rotate(-135deg) scale(1.2);}
@@ -84,5 +98,33 @@ button {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+.pomodoros-counter {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: 600;
+    top: 10px;
+    position: inherit;
+    left: 10px;
+}
+
+
+/* MOBILE  */
+header {
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .headerLogo {
+        height: 50px;
+        transition: 30s;
+    }
+    .countDown {
+        font-size: 5rem;
+    }
+    .mainButton {
+        font-size: 2rem;
     }
 }

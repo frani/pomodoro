@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col, ButtonGroup } from 'react-bootstrap';
 import Header from './Header';
+import isotipo from '../images/isotipo.svg';
 
 export default class Timer extends Component {
     state = {
@@ -50,7 +51,7 @@ export default class Timer extends Component {
         this.restartInterval();
         if (this.state.countDown === 0) {
             if (this.state.currentCountDown === 1500) {
-                let pomodoros = localStorage.getItem('pomodoro-tech-pomodoros') || 0;
+                let pomodoros = Number(localStorage.getItem('pomodoro-tech-pomodoros')) || 0;
                 if (pomodoros === 3) {
                     localStorage.setItem('pomodoro-tech-pomodoros', 0);
                     this.setState({ play: false, countDown: this.state.longBreak, currentCountDown: this.state.longBreak })
@@ -119,7 +120,7 @@ export default class Timer extends Component {
 
 
     render() {
-        let { countDown, play } = this.state;
+        let { countDown, play, currentCountDown } = this.state;
         document.title = `${this.formatTime(this.state.countDown)} Pomodoro`;
         return (
             <>
@@ -127,23 +128,35 @@ export default class Timer extends Component {
             <div className="container">
                 <Row>
                     <Col>
-                        <h1 style={{"fontSize": "9rem", "fontWeight":"700"}} className="color-primary text-centered">{this.formatTime(countDown)}</h1>
+                        <h1 className="countDown color-primary text-centered">{this.formatTime(countDown)}</h1>
                     </Col>
                 </Row>
                 <Row>
                     <Col className="text-centered">
-                        <Button onClick={this.handlePlayAndPause} className="rounded-pill" style={{ "fontSize": "3rem", "padding": "0 3rem" }} variant="success">{play ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i> }</    Button>
-                        <Button onClick={this.reset} className="rounded-pill" style={{ "fontSize": "3rem", "padding": "0 3rem", "borderColor":"transparent" }} variant="outline-light"><i className="fas fa-undo-alt"></i></Button>
+                        <Button onClick={this.handlePlayAndPause} className="mainButton rounded-pill" variant="success">{play ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i> }</    Button>
+                        <Button onClick={this.reset} className="mainButton rounded-pill" style={{ "borderColor":"transparent", "marginLeft":"20px" }} variant="outline-light"><i className="fas fa-undo-alt"></i></Button>
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
-                        <div className="text-centered">
+                    <Col className="text-centered">
+                        <ButtonGroup aria-label="Basic example">
+                            <Button variant="light" active={currentCountDown === 1500} onClick={this.handleChangeTimer} name="pomodoro"> Pomodoro </Button>
+                            <Button variant="light" active={currentCountDown === 900} onClick={this.handleChangeTimer} name="longBreak"> Long Break </Button>
+                            <Button variant="light" active={currentCountDown === 300} onClick={this.handleChangeTimer} name="shortBreak"> Short Break </Button>
+                        </ButtonGroup>
+                        {/* <div className="text-centered">
                             <Button variant="light" onClick={this.handleChangeTimer} name="pomodoro" className="rounded-pill"> Pomodoro </Button>
                             <Button variant="light" onClick={this.handleChangeTimer} name="shortBreak" className="rounded-pill"> Short Break </Button>
                             <Button variant="light" onClick={this.handleChangeTimer} name="longBreak" className="rounded-pill"> Long Break </Button>
-                        </div>
+                        </div> */}
                     </Col>
+                </Row>
+                <Row>
+                    <Col className="text-centered">
+                        <img className={play ? 'headerLogo rotate' : 'headerLogo rotate paused'} style={{"height":"50px","filter":"brightness(.8)"}} src={isotipo} alt="pomodoro technique" />
+                        <span className="pomodoros-counter">{Number(localStorage.getItem('pomodoro-tech-pomodoros')) || 0}</span>
+                    </Col>
+                    
                 </Row>
             </div>
             </>
