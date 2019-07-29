@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Row, Col, ButtonGroup } from 'react-bootstrap';
 import Header from './Header';
 import isotipo from '../images/isotipo.svg';
+import iconNotification from '../images/isotipo.png';
 
 export default class Timer extends Component {
     state = {
@@ -81,13 +82,15 @@ export default class Timer extends Component {
         if (Notification.permission === "granted") {
             if (this.state.currentCountDown === 1500) {
                 new Notification("Pomodoro is Done!", {
-                    icon: "img/coffee.png",
+                    icon: iconNotification,
+                    image: iconNotification,
                     lang: "en",
                     body: "Time to Relax!"
                 });
             } else {
                 new Notification("The time is over!", {
-                    icon: "img/code.png",
+                    icon: iconNotification,
+                    image: iconNotification,
                     lang: "en",
                     body: "Hey, back to work!"
                 });
