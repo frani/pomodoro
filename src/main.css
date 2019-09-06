@@ -1,13 +1,20 @@
-body {
+#root {
+    height: 100%;
+    display: grid;
+}
+.black-theme {
+    background-color: #1c1c1c;
+}
+.red-theme {
     background-color: #860e0c;
 }
 
 .color-primary {
-    color: #fff
+    color: #fff;
 }
 
 .color-secundary {
-    color: #faa
+    color: #faa;
 }
 
 .text-centered {
