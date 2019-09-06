@@ -13,6 +13,9 @@ export default class App extends Component {
   componentDidMount() {
     if(localStorage.getItem('pomodoro-tech-theme') === 'true') {
       this.setState({ checked: true });
+      document.body.style.backgroundColor = "#1c1c1c";
+    } else {
+      document.body.style.backgroundColor = "#860e0c";
     }
   }
 
@@ -20,9 +23,11 @@ export default class App extends Component {
     if(this.state.checked) {
       localStorage.setItem('pomodoro-tech-theme', 'false');
       this.setState({ checked: false});
+      document.body.style.backgroundColor = "#860e0c";
     } else {
       localStorage.setItem('pomodoro-tech-theme', 'true');
       this.setState({ checked: true });
+      document.body.style.backgroundColor = "#1c1c1c";
     }
   }
   render() {
