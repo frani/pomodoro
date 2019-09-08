@@ -3,6 +3,7 @@ import { Button, Row, Col, ButtonGroup } from 'react-bootstrap';
 import Header from './Header';
 import isotipo from '../images/isotipo.svg';
 import iconNotification from '../images/isotipo.png';
+import goldSound from '../gold-sound.mp3';
 
 export default class Timer extends Component {
     state = {
@@ -75,7 +76,7 @@ export default class Timer extends Component {
 
     alert() {
         // audio
-        let audio = new Audio('http://adobewordpress.com/tasarim/include/gold-sound.mp3');
+        let audio = new Audio(goldSound);
         audio.play();
         setTimeout(() => audio.pause(), 1400);
         // notification
