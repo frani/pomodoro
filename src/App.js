@@ -14,20 +14,24 @@ export default class App extends Component {
     if(localStorage.getItem('pomodoro-tech-theme') === 'true') {
       this.setState({ checked: true });
       document.body.style.backgroundColor = "#1c1c1c";
+      document.getElementById('theme-color').content = "#1c1c1c";
     } else {
       document.body.style.backgroundColor = "#860e0c";
+      document.getElementById('theme-color').content = "#860e0c";
     }
   }
-
+  
   handleChange = () => {
     if(this.state.checked) {
       localStorage.setItem('pomodoro-tech-theme', 'false');
       this.setState({ checked: false});
       document.body.style.backgroundColor = "#860e0c";
+      document.getElementById('theme-color').content = "#860e0c";
     } else {
       localStorage.setItem('pomodoro-tech-theme', 'true');
       this.setState({ checked: true });
       document.body.style.backgroundColor = "#1c1c1c";
+      document.getElementById('theme-color').content = "#1c1c1c";
     }
   }
   render() {
