@@ -61,7 +61,10 @@ export default class App extends Component {
           />
         </label>
         <a className="text-warning" href="https://en.wikipedia.org/wiki/Pomodoro_Technique" rel="noopener noreferrer" target="_blank"><p><em>¿Why Pomodoro Technique?</em></p></a>
-        <p style={{"color":"white"}}>Hecho con <span className="heart"></span> por <a className="text-warning" href="https://frani.me" rel="noopener noreferrer" target="_blank">Frani</a></p>
+        <p style={{"color":"white"}}><svg height="20" class="octicon octicon-code v-align-middle mr-1" aria-label="code" fill="currentColor"
+          viewBox="0 0 14 16" version="1.1" width="17" role="img">
+          <path d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path>
+        </svg> with <span className="heart"></span> by <a className="text-warning" href="https://frani.me" rel="noopener noreferrer" target="_blank">Frani</a></p>
       </footer>
     </div>
     )
