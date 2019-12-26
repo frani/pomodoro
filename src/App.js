@@ -61,7 +61,7 @@ export default class App extends Component {
           />
         </label>
         <a className="text-warning" href="https://en.wikipedia.org/wiki/Pomodoro_Technique" rel="noopener noreferrer" target="_blank"><p><em>¿Why Pomodoro Technique?</em></p></a>
-        <p style={{"color":"white"}}>Hecho con <span className="heart"></span> por <a className="text-warning" href="https://roarstudio.org" rel="noopener noreferrer" target="_blank">RoaR</a></p>
+        <p style={{"color":"white"}}>Hecho con <span className="heart"></span> por <a className="text-warning" href="https://frani.me" rel="noopener noreferrer" target="_blank">Frani</a></p>
       </footer>
     </div>
     )
